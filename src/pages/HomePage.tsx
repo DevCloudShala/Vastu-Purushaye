@@ -3,14 +3,22 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Footer from '../components/footer/Footer';
 import { CheckCircle, HomeIcon, Image, MapIcon } from 'lucide-react';
+import WelcomeSection from '../components/home/WelcomeSection';
+import WhyChooseSection from '../components/home/WhyChooseUsSection';
+import ServicesSection from '../components/home/ServicesSection';
+import CTASection from '../components/home/CTASection';
 
 
 const HomePage = () => {
   return (
     <>
-    
+    <WelcomeSection />
       <Hero />
       <Features />
+      <WhyChooseSection />
+      <ServicesSection />
+      <Features />
+      <CTASection />
    <section className="bg-gray-50 py-12">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-8">WHAT WE NEED?</h2>

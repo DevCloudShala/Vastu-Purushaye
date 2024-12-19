@@ -6,12 +6,13 @@ const ContactPage = () => {
   const [message, setMessage] = useState(""); // Message state
   const [name, setName] = useState(""); // Message state
   const [email, setEmail] = useState(""); // Message state
+  const [mobile, setMobile] = useState(""); // Message state
   const whatsappNumber = "919520457941"; // Replace with your WhatsApp number
   const handleSend = () => {
     if (message.trim()) {
       // Open WhatsApp with the entered message
       window.open(
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi My Name is'+ name+ `${'\n'}`+ 'My Email is: '+email+ `${'\n'}` +message)}`,
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi My Name is'+ name+ `${'\n'}`+ 'My Email is: '+email+ `${'\n'}`+ 'My Mob. No. is: '+mobile+ `${'\n'}` +message)}`,
         "_blank"
       );
       setMessage(""); // Clear input after sending
@@ -84,6 +85,18 @@ const ContactPage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                   type="email"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Mobile No.
+                </label>
+                <input
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                  type="number"
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   required
                 />

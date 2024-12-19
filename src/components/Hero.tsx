@@ -22,7 +22,8 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-6xl font-serif font-bold mb-6"
           >
-            Harmonize Your Space with Ancient Wisdom
+            Home Vastu : Harmonize Your Living Space
+
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
