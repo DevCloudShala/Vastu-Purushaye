@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const WelcomeSection = () => {
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center mb-24 mt-20">
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Section */}

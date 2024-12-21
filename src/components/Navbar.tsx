@@ -43,7 +43,10 @@ const Navbar = () => {
             >
               <Home className="h-6 w-6 text-amber-700" />
               <span className="text-xl font-serif font-semibold text-amber-700">
-                Vastu Purushaye
+              <motion.a
+                  href={"/"}>
+                  Vastu Purushaye
+                  </motion.a>
               </span>
             </motion.div>
             

@@ -1,10 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SolutionCard from '../components/solutions/SolutionCard';
+import SolutionDialog from '../components/solutions/SolutionDialog';
 import { solutions } from '../data/solutions';
+import ReactConfetti from 'react-confetti';
+import VastuSection from './vastu/VastuSection';
 
 const SolutionsPage = () => {
+
+  const [selectedSolution, setSelectedSolution] = useState(null);
+
+  const openDialog = (solution) => setSelectedSolution(solution);
+  const closeDialog = () => setSelectedSolution(null);
+
   return (
+    <>
     <div className="pt-16">
       <motion.div
         initial={{ opacity: 0 }}
@@ -25,13 +35,25 @@ const SolutionsPage = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {solutions.map((solution) => (
-            <SolutionCard key={solution.id} solution={solution} />
-          ))}
-        </div>
+      
+      <div className="grid md:grid-cols-3 gap-8">
+        {solutions.map((solution) => (
+          <SolutionCard key={solution.id} solution={solution} onOpen={openDialog} />
+        ))}
+      </div>
+     
       </motion.div>
+
+      <AnimatePresence>
+        {selectedSolution && (
+          <SolutionDialog solution={selectedSolution} onClose={closeDialog} />
+        )}
+      </AnimatePresence>
     </div>
+    <VastuSection/>
+
+    </>
+
   );
 };
 

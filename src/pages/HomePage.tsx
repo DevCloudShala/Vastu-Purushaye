@@ -7,17 +7,18 @@ import WelcomeSection from '../components/home/WelcomeSection';
 import WhyChooseSection from '../components/home/WhyChooseUsSection';
 import ServicesSection from '../components/home/ServicesSection';
 import CTASection from '../components/home/CTASection';
+import VastuSection from './vastu/VastuSection';
 
 
 const HomePage = () => {
   return (
     <>
     <WelcomeSection />
-      <Hero />
+      {/* <Hero /> */}
       <Features />
+      <VastuSection />
       <WhyChooseSection />
       <ServicesSection />
-      <Features />
       <CTASection />
    <section className="bg-gray-50 py-12">
       <div className="container mx-auto px-6 text-center">

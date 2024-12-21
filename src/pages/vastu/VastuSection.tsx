@@ -1,0 +1,69 @@
+import React from 'react'
+
+import { motion } from "framer-motion";
+const VastuSection = () => {
+    const vastuReasons = [
+      {
+        title: "Promotes Positive Energy",
+        text: "Aligning spaces with natural forces like sunlight and magnetic fields to promote positive energy.",
+        image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80"
+      },
+      {
+        title: "Improves Health and Well-being",
+        text: "Ensures a balanced flow of energy for better physical and mental health.",
+        image: "https://images.unsplash.com/photo-1556228453-1c5a94e141b9?auto=format&fit=crop&w=500&q=80"
+      },
+      {
+        title: "Enhances Prosperity",
+        text: "Removes obstacles to attract financial stability and wealth.",
+        image: "https://images.unsplash.com/photo-1516841273335-e39b378881f6?auto=format&fit=crop&w=500&q=80"
+      },
+      {
+        title: "Supports Mental Peace and Harmony",
+        text: "Encourages harmonious relationships and reduces stress.",
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80"
+      }
+    ];
+  
+    return (
+      <section className="py-20 bg-gradient-to-r from-green-50 via-white to-green-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+              What is Vastu ?
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Vastu Shastra is an ancient Indian system of architecture and design that creates harmonious living spaces.
+            </p>
+          </motion.div>
+  
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {vastuReasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="bg-white shadow-lg rounded-lg overflow-hidden text-center"
+              >
+                <img src={reason.image} alt="Reason" className="w-full h-32 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
+                  <p className="text-gray-600">{reason.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  export default VastuSection;

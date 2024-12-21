@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import ReactConfetti from 'react-confetti';
 
 const ContactPage = () => {
   const [message, setMessage] = useState(""); // Message state
@@ -10,6 +11,8 @@ const ContactPage = () => {
   const whatsappNumber = "919520457941"; // Replace with your WhatsApp number
   const handleSend = () => {
     if (message.trim()) {
+      setIsConfettiActive(true)
+
       // Open WhatsApp with the entered message
       window.open(
         `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hi My Name is'+ name+ `${'\n'}`+ 'My Email is: '+email+ `${'\n'}`+ 'My Mob. No. is: '+mobile+ `${'\n'}` +message)}`,
@@ -20,8 +23,26 @@ const ContactPage = () => {
       alert("Please type a message before sending.");
     }
   };
+    const [isConfettiActive, setIsConfettiActive] = React.useState(false);
+  
   return (
     <div className="pt-16">
+          <motion.div className="relative">
+     
+      {isConfettiActive && (
+        <ReactConfetti
+          numberOfPieces={300} // Adjust for confetti density
+          recycle={false} // Confetti disappears after duration
+          type="rect" // Confetti shape
+          widthOrHeight={2} // Confetti size
+          colors={[
+            '#ff7f50', // Orange
+            '#ffc107', // Yellow
+            '#4ecdc4', // Teal
+          ]}
+        />
+      )}
+    </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
