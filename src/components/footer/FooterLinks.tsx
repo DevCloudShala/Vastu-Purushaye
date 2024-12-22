@@ -12,19 +12,19 @@ const linkSections: LinkSection[] = [
   {
     title: 'Services',
     links: [
-      { label: 'Home Consultation', href: '/services/home' },
-      { label: 'Office Planning', href: '/services/office' },
-      { label: 'Plot Analysis', href: '/services/plot' },
-      { label: 'Remedial Solutions', href: '/services/remedial' },
+      { label: 'Home Consultation', href: '/' },
+      { label: 'Office Planning', href: '/office-vastu' },
+      { label: 'Plot Analysis', href: '/contact' },
+      { label: 'Remedial Solutions', href: '/energy-balance' },
     ],
   },
   {
     title: 'Resources',
     links: [
       { label: 'Vastu Tips', href: '/tips' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'commercial vastu', href: '/commercial-vastu' },
       { label: 'FAQs', href: '/faqs' },
-      { label: 'Case Studies', href: '/case-studies' },
+      // { label: 'Case Studies', href: '/case-studies' },
     ],
   },
   {
@@ -32,8 +32,6 @@ const linkSections: LinkSection[] = [
     links: [
       { label: 'About Us', href: '/about' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Press Kit', href: '/press' },
     ],
   },
 ];

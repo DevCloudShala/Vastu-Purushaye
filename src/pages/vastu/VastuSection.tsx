@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {WEB_IMAGE} from '../../data/index.js'
 import { motion } from "framer-motion";
 const VastuSection = () => {
     const vastuReasons = [
@@ -11,12 +11,12 @@ const VastuSection = () => {
       {
         title: "Improves Health and Well-being",
         text: "Ensures a balanced flow of energy for better physical and mental health.",
-        image: "https://images.unsplash.com/photo-1556228453-1c5a94e141b9?auto=format&fit=crop&w=500&q=80"
+        image: WEB_IMAGE.Health
       },
       {
         title: "Enhances Prosperity",
         text: "Removes obstacles to attract financial stability and wealth.",
-        image: "https://images.unsplash.com/photo-1516841273335-e39b378881f6?auto=format&fit=crop&w=500&q=80"
+        image: WEB_IMAGE.EnhanceP
       },
       {
         title: "Supports Mental Peace and Harmony",
@@ -53,7 +53,7 @@ const VastuSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="bg-white shadow-lg rounded-lg overflow-hidden text-center"
               >
-                <img src={reason.image} alt="Reason" className="w-full h-32 object-cover" />
+                <img src={reason.image} alt="Reason" className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
                   <p className="text-gray-600">{reason.text}</p>

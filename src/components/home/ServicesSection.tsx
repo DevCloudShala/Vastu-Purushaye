@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from '../ui/ServiceCard';
+import {WEB_IMAGE} from '../../data/index.js'
 
 const services = [
   {
@@ -9,7 +10,7 @@ const services = [
     description: "Expert recommendations for new or existing homes. Get personalized guidance to create a harmonious living space that aligns with Vastu principles."
   },
   {
-    image: "https://images.unsplash.com/photo-1600573472591-ee6c563aaec9?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image: WEB_IMAGE.roombyroom,
     title: "Room-by-Room Vastu Tips",
     description: "Detailed guidance for every room in your home. Learn how to optimize each space for maximum positive energy and functionality."
   },
@@ -52,7 +53,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {services.map((service, index) => (
             <div
               key={index}

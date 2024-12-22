@@ -26,7 +26,7 @@ const Footer = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
             <FooterLinks />
-            <Newsletter />
+            {/* <Newsletter /> */}
           </div>
         </div>
 
@@ -36,7 +36,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Vastu Purushaye. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="/privacy" className="hover:text-amber-400 transition-colors">
+              {/* <a href="/privacy" className="hover:text-amber-400 transition-colors">
                 Privacy Policy
               </a>
               <a href="/terms" className="hover:text-amber-400 transition-colors">
@@ -44,7 +44,7 @@ const Footer = () => {
               </a>
               <a href="/sitemap" className="hover:text-amber-400 transition-colors">
                 Sitemap
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

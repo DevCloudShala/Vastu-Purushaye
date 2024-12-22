@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import {WEB_IMAGE} from '../data/index.js'
+console.log(WEB_IMAGE)
 const features = [
   {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image:WEB_IMAGE.homeVastu,
     title: "Home Vastu",
     description: "Create a harmonious living space that promotes peace and prosperity for you and your family.",
     link: "/"
@@ -16,7 +17,7 @@ const features = [
     link: "/office-vastu"
   },
   {
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image: WEB_IMAGE.commercialVastu,
     title: "Commercial Vastu",
     description: "Enhance business prosperity with specialized Vastu solutions for commercial spaces.",
     link: "/commercial-vastu"
@@ -28,13 +29,13 @@ const features = [
     link: "/industrial-vastu"
   },
   {
-    image: "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image: WEB_IMAGE.DirectionGuidance,
     title: "Direction Guidance",
     description: "Learn about the significance of directions and their impact on different aspects of life.",
     link: "/direction-guidance"
   },
   {
-    image: "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image: WEB_IMAGE.energyBalance,
     title: "Energy Balance",
     description: "Discover the art of balancing the five elements that enhances well-being, success, and peace.",
     link: "/energy-balance"

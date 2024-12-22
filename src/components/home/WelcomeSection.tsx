@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-
+import {WEB_IMAGE} from '../../data/index.js'
+import ScrollDownButton from '../ScrollDownButton.js';
 const WelcomeSection = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center mb-24 mt-20">
@@ -49,13 +50,17 @@ const WelcomeSection = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg inline-flex items-center space-x-2 transition-colors">
+              <motion.a href='/contact' className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg inline-flex items-center space-x-2 transition-colors">
                 <span>Get Started</span>
                 <ArrowRight className="h-5 w-5" />
-              </button>
+              </motion.a>
+              <ScrollDownButton  targetId="section2" offset={-50} duration={700}>
+                
               <button className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-3 rounded-lg transition-colors">
                 Learn More
               </button>
+              </ScrollDownButton>
+
             </motion.div>
           </motion.div>
 
@@ -69,7 +74,11 @@ const WelcomeSection = () => {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
               {/* Placeholder for your image */}
               <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <p className="text-sm">Add your image here</p>
+              <img
+              src={WEB_IMAGE.founderImage}
+              alt="To-The-Scale Layout"
+              className="w-full h-full object-cover rounded-lg"
+            />
               </div>
             </div>
             

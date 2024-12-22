@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {WEB_IMAGE} from '../../data/index.js'
 
 const reasons = [
   {
@@ -8,7 +9,7 @@ const reasons = [
     description: "Based on centuries-old wisdom, our Vastu solutions are designed to align with modern lifestyles."
   },
   {
-    image: "https://images.unsplash.com/photo-1600573472573-8b45bf1907fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image:WEB_IMAGE.homeplan,
     title: "Personalized Guidance",
     description: "Get customized advice for your home layout, interiors, and more."
   },

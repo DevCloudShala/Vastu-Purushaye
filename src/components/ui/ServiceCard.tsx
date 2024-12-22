@@ -37,14 +37,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="p-6 flex-1 flex flex-col">
         <p className="text-gray-600 mb-6">{description}</p>
         <div className="mt-auto">
-          <motion.button
+          <motion.a href='/contact'
             whileHover={{ x: 5 }}
             whileTap={{ scale: 0.95 }}
             className="group inline-flex items-center text-amber-600 hover:text-amber-700 font-medium transition-colors"
           >
-            Read More
+            Get Service
             <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.div>

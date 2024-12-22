@@ -9,13 +9,17 @@ import ServicesSection from '../components/home/ServicesSection';
 import CTASection from '../components/home/CTASection';
 import VastuSection from './vastu/VastuSection';
 
+import {WEB_IMAGE} from '../data/index.js'
 
 const HomePage = () => {
   return (
     <>
     <WelcomeSection />
       {/* <Hero /> */}
+      <div id='section2'>
+
       <Features />
+      </div>
       <VastuSection />
       <WhyChooseSection />
       <ServicesSection />
@@ -26,7 +30,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6">
             <img
-              src="https://via.placeholder.com/720x1080"
+              src={WEB_IMAGE.tothescale}
               alt="To-The-Scale Layout"
               className="w-full h-auto mb-4 rounded-lg"
             />
@@ -35,27 +39,28 @@ const HomePage = () => {
           </div>
           <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6">
             <img
-              src="https://via.placeholder.com/720x1080"
+              src={WEB_IMAGE.north}
               alt="North Direction Marking"
-              className="w-full h-auto mb-4 rounded-lg"
+              className="w-full h-full object-cover mb-4 rounded-lg"
             />
             <h3 className="text-xl font-semibold text-gray-700">North Direction Marking</h3>
             <p className="text-gray-600">On the Layout Map</p>
           </div>
           <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6">
             <img
-              src="https://via.placeholder.com/720x1080"
+              src={WEB_IMAGE.pinlocation}
               alt="Google Location"
-              className="w-full h-auto mb-4 rounded-lg"
+              className="w-full h-auto mb-40 pt-20 rounded-lg"
             />
             <h3 className="text-xl font-semibold text-gray-700">Google Location</h3>
             <p className="text-gray-600">Of the site</p>
           </div>
           <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-6">
             <img
-              src="https://via.placeholder.com/720x1080"
+              src={WEB_IMAGE.location}
+
               alt="Snapshot from Google Maps"
-              className="w-full h-auto mb-4 rounded-lg"
+             className="w-full h-auto mb-40 pt-20 rounded-lg"
             />
             <h3 className="text-xl font-semibold text-gray-700">Snapshot from Google Maps</h3>
             <p className="text-gray-600">Highlighting the site</p>

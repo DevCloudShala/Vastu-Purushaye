@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from '../../../components/ui/ServiceCard';
-
+import {WEB_IMAGE} from '../../../data/index.js'
 const services = [
   {
     image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
@@ -24,7 +24,7 @@ const services = [
     description: "Tailored solutions for startups, corporate offices, retail, and more."
   },
   {
-    image: "https://images.unsplash.com/photo-1585373683920-671438c82bfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image: WEB_IMAGE.commercialVastu,
     title: "Vastu for Home Offices",
     description: "Tips to create a focused and productive space at home."
   }
