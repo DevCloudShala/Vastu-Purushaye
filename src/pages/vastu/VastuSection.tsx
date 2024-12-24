@@ -6,7 +6,7 @@ const VastuSection = () => {
       {
         title: "Promotes Positive Energy",
         text: "Aligning spaces with natural forces like sunlight and magnetic fields to promote positive energy.",
-        image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80"
+        image: WEB_IMAGE.om
       },
       {
         title: "Improves Health and Well-being",
@@ -21,7 +21,7 @@ const VastuSection = () => {
       {
         title: "Supports Mental Peace and Harmony",
         text: "Encourages harmonious relationships and reduces stress.",
-        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80"
+        image: WEB_IMAGE.peace
       }
     ];
   
@@ -35,10 +35,10 @@ const VastuSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+            <h2 className=" md:text-5xl text-3xl font-serif font-bold text-gray-900 mb-4">
               What is Vastu ?
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-2xl max-w-2xl mx-auto">
               Vastu Shastra is an ancient Indian system of architecture and design that creates harmonious living spaces.
             </p>
           </motion.div>

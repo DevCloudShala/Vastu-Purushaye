@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {WEB_IMAGE} from '../data/index.js'
+import HeadingBorder from './HeadingBorder.tsx';
 console.log(WEB_IMAGE)
 const features = [
   {
@@ -47,7 +48,7 @@ const Features = () => {
   const isOdd = totalCards % 2 !== 0;
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-5 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,10 +57,15 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
+          <div className='flex flex-col justify-center mt-6 items-center'>
+
+          <h2 className="text-5xl text-black font-serif font-bold ">
             Vastu Solutions for Every Space
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <HeadingBorder/>
+          </div>
+          
+          <p className="text-gray-600 max-w-2xl text-xl mt-2 mx-auto">
             Discover how ancient Vastu principles can transform your living and working spaces into havens of positive energy and success.
           </p>
         </motion.div>

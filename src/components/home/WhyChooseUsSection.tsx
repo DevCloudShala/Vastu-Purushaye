@@ -1,68 +1,64 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {WEB_IMAGE} from '../../data/index.js'
-
 const reasons = [
   {
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image:
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Time-Tested Principles",
-    description: "Based on centuries-old wisdom, our Vastu solutions are designed to align with modern lifestyles."
+    description:
+      "Our Vastu solutions are grounded in centuries-old wisdom, offering a harmonious blend of traditional practices and modern lifestyles. With this approach, your home becomes a sanctuary of balance and positive energy.",
   },
   {
-    image:WEB_IMAGE.homeplan,
-    title: "Personalized Guidance",
-    description: "Get customized advice for your home layout, interiors, and more."
+    image:
+    "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",    title: "Personalized Guidance",
+    description:
+      "We provide tailored advice for your home’s layout, interiors, and orientation. From selecting the perfect direction for each room to enhancing the energy flow, our customized recommendations will make your living space truly special.",
   },
   {
-    image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+    image:
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Holistic Well-Being",
-    description: "Experience improved relationships, financial growth, and peace of mind by optimizing your home's energy flow."
-  }
+    description:
+      "Experience improved relationships, financial stability, and peace of mind by aligning your home with the principles of Vastu. Our solutions ensure holistic growth and harmony in all aspects of life.",
+  },
 ];
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-amber-50 to-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
-            Why Choose Home Vastu?
-          </h2>
-        </motion.div>
+    <>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img
-                  src={reason.image}
-                  alt={reason.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-                <p className="text-gray-600">{reason.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+<motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-3xl font-serif mt-8 font-bold text-gray-900 mb-4">
+          Why Choose Home Vastu?
+        </h2>
+        <div className="w-16 h-1 bg-gray-900 mx-auto rounded"></div>
+      </motion.div>
+{
+  reasons.map((reason, index) => (
+    <section className="bg-white px-4 py-8 flex flex-wrap items-center justify-center gap-6">
+    {/* Image Section */}
+   
+
+    {/* Text Section */}
+    <div className="flex-1 md:px-28 px-0">
+      <h1 className="text-xl md:text-3xl font-bold mb-4">
+        {index+1}- {reason.title}
+      </h1>
+      <p className="text-gray-700 text-xl md:text-2xl  leading-relaxed mb-4">
+        {reason.description}
+      </p>
+   
+    </div>
+  </section>
+  ))
+}
+    </>
   );
 };
 

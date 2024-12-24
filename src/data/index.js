@@ -13,6 +13,9 @@ import tothescale from './tothescale.jpeg'
 import north from './north.png'
 import pinlocation from './pinlocation.png'
 import location from './location.png'
+import vastuMadal from './vastuMadal.png'
+import om from './om.jpg'
+import peace from './peace.png'
 
 export const WEB_IMAGE={
     founderImage:founderImage,
@@ -29,5 +32,8 @@ export const WEB_IMAGE={
     north:north,
     pinlocation:pinlocation,
     location:location,
+    vastuMadal:vastuMadal,
+    om:om,
+    peace:peace,
 
 }

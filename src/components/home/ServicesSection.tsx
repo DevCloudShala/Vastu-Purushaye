@@ -2,34 +2,36 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from '../ui/ServiceCard';
 import {WEB_IMAGE} from '../../data/index.js'
+import HeadingBorder from '../HeadingBorder.tsx';
 
 const services = [
   {
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Vastu Consultation",
-    description: "Expert recommendations for new or existing homes. Get personalized guidance to create a harmonious living space that aligns with Vastu principles."
+    description: "Receive expert guidance to harmonize your living space with Vastu principles, enhancing positive energy and well-being."
   },
   {
     image: WEB_IMAGE.roombyroom,
     title: "Room-by-Room Vastu Tips",
-    description: "Detailed guidance for every room in your home. Learn how to optimize each space for maximum positive energy and functionality."
+    description: "Get tailored advice for each room to optimize energy flow and functionality while ensuring a harmonious environment."
   },
   {
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Vastu for Prosperity",
-    description: "Discover powerful Vastu arrangements that attract wealth and abundance. Transform your space into a magnet for prosperity."
+    description: "Discover proven Vastu strategies to attract wealth, success, and abundance into your home and life."
   },
   {
     image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Remedies Without Renovation",
-    description: "Simple yet effective Vastu solutions that don't require major changes. Learn quick fixes to improve your space's energy."
+    description: "Implement simple and effective Vastu remedies to enhance your space's energy without major structural changes."
   },
   {
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
     title: "Modern Vastu Integration",
-    description: "Seamlessly blend traditional Vastu principles with contemporary design. Create a modern space that honors ancient wisdom."
+    description: "Combine timeless Vastu principles with modern design to create a space that balances tradition and contemporary aesthetics."
   }
 ];
+
 
 const ServicesSection = () => {
   const totalCards = services.length;
@@ -45,10 +47,18 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
+          <div className='flex justify-center items-center  flex-col'>
+
+          <h2 className="text-5xl font-serif font-bold text-gray-900">
             What We Offer
+
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <HeadingBorder/>
+            
+          </div>
+
+
+          <p className="text-gray-600 max-w-2xl md:text-xl text-xl mt-5 mx-auto">
             Comprehensive Vastu solutions tailored to your needs
           </p>
         </motion.div>

@@ -47,7 +47,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   { href: '/', label: 'Home' },
                   { href: '/about', label: 'About' },
                   { href: '/solutions', label: 'Solutions' },
-                  { href: '/tips', label: 'Tips' },
+                  { href: '/blogs', label: 'Blogs' },
                   { href: '/contact', label: 'Contact' }
                 ].map((link) => (
                   <motion.div
