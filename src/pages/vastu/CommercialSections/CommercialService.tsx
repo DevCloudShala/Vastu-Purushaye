@@ -1,43 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import ServiceCard from '../../../components/ui/ServiceCard';
+import React from "react";
+import { motion } from "framer-motion";
 
-const services = [
-  {
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Retail Store Vastu",
-    description: "Layouts and placements to attract customers and boost sales."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Showroom Vastu",
-    description: "Strategies to enhance visibility and profitability."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Office Vastu",
-    description: "Optimize workspaces for better decision-making and team performance."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Industrial Vastu",
-    description: "Ideal placements for machinery, raw materials, and operations."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1585373683920-671438c82bfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Hospitality Vastu",
-    description: "Energy-aligned spaces for restaurants, hotels, and resorts."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1585373683920-671438c82bfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
-    title: "⁠Commercial Space Remedies",
-    description: "Easy fixes for existing structures without major alterations."
-  }
-];
 
-const CommercialService = () => {
+const CommercialService = ({ImportantElementsCommercial,services}) => {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,28 +13,61 @@ const CommercialService = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-serif font-bold text-amber-600 mb-4">
             What We Offer
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive Vastu solutions for your workplace
+          <p className="text-xl font-medium text-gray-700 max-w-2xl mx-auto">
+            Comprehensive Vastu solutions for you
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ul className="list-disc text-3xl list-inside space-y-8">
           {services.map((service, index) => (
-            <ServiceCard
+            <motion.li
               key={index}
-              {...service}
-              delay={index * 0.1}
-            />
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="text-gray-800"
+            >
+              <strong className="text-3xl">{service.title}:</strong>{" "}
+              <p className="text-xl">{service.description}</p>
+              <ul className="list-disc list-inside mt-2">
+                {service.bulletPoints.map((point, i) => (
+                  <li key={i} className="mt-1 text-xl text-gray-600">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </motion.li>
           ))}
-        </div>
+        </ul>
+        <section className="mt-10">
+          <h2 className="text-2xl lg:text-4xl font-serif font-bold text-amber-600 mb-4">
+            {ImportantElementsCommercial.title}
+          </h2>
+          <ul className="list-disc text-3xl list-inside space-y-8">
+            {ImportantElementsCommercial.elements.map((element, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-gray-800"
+              >
+                <strong className="text-3xl">{element.heading}:</strong>{" "}
+                <p className="text-xl">{element.details}</p>
+                <ul className="list-disc list-inside mt-2"></ul>
+              </motion.li>
+            ))}
+
+          </ul>
+        </section>
       </div>
     </section>
   );
 };
 
 export default CommercialService;
-
-

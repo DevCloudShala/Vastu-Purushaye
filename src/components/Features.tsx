@@ -9,7 +9,7 @@ const features = [
     image:WEB_IMAGE.homeVastu,
     title: "Home Vastu",
     description: "Create a harmonious living space that promotes peace and prosperity for you and your family.",
-    link: "/"
+    link: "/Home-vastu"
   },
   {
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",

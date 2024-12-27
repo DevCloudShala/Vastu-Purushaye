@@ -1,28 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
+import ScrollToTop from '../components/ScrollToTop';
+
 
 const faqs = [
   {
-    question: "What is Vastu Shastra?",
-    answer: "Vastu Shastra is an ancient Indian science of architecture and design that aims to create harmony between nature and living spaces. It combines principles of design, architecture, and spiritual beliefs to promote positive energy flow."
+  question: "What is Vastu Shastra?",
+  answer: "Vastu Shastra is an ancient Indian science of architecture and design that aims to create harmony between nature and living spaces. It combines principles of design, architecture, and spiritual beliefs to promote positive energy flow."
   },
   {
-    question: "How can Vastu improve my life?",
-    answer: "Vastu can improve your life by optimizing the energy flow in your living spaces, potentially leading to better health, prosperity, relationships, and overall well-being through proper placement of elements and directional alignment."
+  question: "How can Vastu improve my life?",
+  answer: "Vastu can improve your life by optimizing the energy flow in your living spaces, potentially leading to better health, prosperity, relationships, and overall well-being through proper placement of elements and directional alignment."
   },
   {
-    question: "Is Vastu consultation expensive?",
-    answer: "Vastu consultation costs vary based on the type and size of the property. We offer different packages to suit various budgets, and the long-term benefits often outweigh the initial investment."
+  question: "Is Vastu consultation expensive?",
+  answer: "Vastu consultation costs vary based on the type and size of the property. We offer different packages to suit various budgets, and the long-term benefits often outweigh the initial investment."
   },
-  // Add more FAQs as needed
-];
-
+  {
+  question: "How long does a Vastu consultation take?",
+  answer: "A typical Vastu consultation can take anywhere from a few hours to a day, depending on the complexity and size of the property. Follow-up visits may also be required for comprehensive analysis and implementation."
+  },
+  {
+  question: "Can Vastu be applied to existing buildings?",
+  answer: "Yes, Vastu can be applied to existing buildings through adjustments and remedies. Many modifications do not require structural changes but focus on placement, decor, and the use of specific symbols or colors."
+  },
+  {
+  question: "Does Vastu work with modern architecture?",
+  answer: "Vastu principles can be harmonized with modern architecture by integrating design elements that complement both styles. Our consultants work with architects to ensure functional design and aesthetic appeal are maintained."
+  },
+  {
+  question: "Are Vastu principles scientifically proven?",
+  answer: "While Vastu Shastra is based on ancient wisdom and cultural practices, some aspects align with modern scientific principles such as orientation, ventilation, and energy flow. Many people report positive results, though it may not be scientifically validated in conventional terms."
+  },
+  {
+  question: "How does Vastu differ from Feng Shui?",
+  answer: "While both Vastu Shastra and Feng Shui aim to harmonize living spaces, they originate from different cultures—India and China, respectively. They differ in principles, methodologies, and specific practices, although both focus on energy flow."
+  },
+  {
+  question: "Do I need to make structural changes for Vastu compliance?",
+  answer: "Not necessarily. Many Vastu remedies involve adjustments like changing furniture placement, color schemes, or using specific symbols, which do not require structural alterations. However, for new constructions, Vastu principles can guide the architectural design."
+  },
+  {
+  question: "Can Vastu help in business success?",
+  answer: "Vastu can be applied to business premises to potentially enhance productivity, financial flow, employee satisfaction, and customer attraction by optimizing space usage and energy alignment."
+  },
+  {
+  question: "Is Vastu relevant for small apartments?",
+  answer: "Vastu principles can be adapted to any size of living space, including small apartments. Simple changes and remedies can be effective in optimizing energy flow and enhancing the living environment."
+  },
+  {
+  question: "What should I do if I can't apply all Vastu principles?",
+  answer: "If full compliance isn't feasible, focusing on key areas like the main entrance, kitchen, and bedroom can still bring significant benefits. Consult a Vastu expert for personalized solutions and effective remedies."
+  },
+  {
+  question: "How can colors influence Vastu in my home?",
+  answer: "Colors play a vital role in Vastu by affecting mood and energy. Each color symbolizes different elements and energies, and their proper use can enhance positivity and balance in a space. For example, light colors can create a sense of space and tranquility, while warm tones can add vibrancy and energy."
+  }
+  ];
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   return (
+
     <div className="pt-16">
+    <ScrollToTop/>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

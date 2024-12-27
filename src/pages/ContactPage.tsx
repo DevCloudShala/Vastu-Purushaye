@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import ReactConfetti from 'react-confetti';
+import ScrollToTop from '../components/ScrollToTop';
 
 const ContactPage = () => {
   const [message, setMessage] = useState(""); // Message state
@@ -27,6 +28,8 @@ const ContactPage = () => {
   
   return (
     <div className="pt-16">
+      <ScrollToTop/>
+
           <motion.div className="relative">
      
       {isConfettiActive && (

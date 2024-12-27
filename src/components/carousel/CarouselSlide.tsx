@@ -25,7 +25,6 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ image, isActive }) => {
           alt={image.alt}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         
         <motion.div
           initial={{ opacity: 1, y: 20 }}
