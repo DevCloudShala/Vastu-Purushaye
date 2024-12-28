@@ -1,67 +1,77 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { carouselImages } from './CarouselData';
-import CarouselSlide from './CarouselSlide';
-import CarouselIndicators from './CarouselIndicators';
-
-const AUTOPLAY_INTERVAL = 5000;
+import React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel } from "react-responsive-carousel";
+import { motion } from "framer-motion";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel default styles
+import { carouselImages } from "./CarouselData";
 
 const ImageCarousel: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
-  }, []);
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => 
-      prev === 0 ? carouselImages.length - 1 : prev - 1
-    );
-  };
-
-  useEffect(() => {
-    const timer = setInterval(goToNext, AUTOPLAY_INTERVAL);
-    return () => clearInterval(timer);
-  }, [goToNext]);
-
   return (
-    <div className="relative h-full w-full overflow-hidden">
-      {carouselImages.map((image, index) => (
-        <CarouselSlide
-          key={image.id}
-          image={image}
-          isActive={index === currentIndex}
-        />
-      ))}
-
-      {/* Navigation Buttons */}
-      <div className="absolute z-10 inset-0 flex items-center justify-between p-4">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={goToPrevious}
-          className="p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </motion.button>
+    <div className="relative w-full h-full">
+      <Carousel
+        showArrows
+        showStatus={false}
+        showIndicators={false}
+        autoPlay
+        infiniteLoop
+        interval={5000}
+        stopOnHover
+        swipeable
+        emulateTouch
         
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={goToNext}
-          className="p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </motion.button>
-      </div>
+        renderArrowPrev={(onClickHandler, hasPrev) =>
+          hasPrev && (
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={onClickHandler}
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full text-white hover:bg-white/30 transition-colors"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </motion.button>
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext) =>
+          hasNext && (
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={onClickHandler}
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 bg-white/20 p-2 rounded-full text-white hover:bg-white/30 transition-colors"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </motion.button>
+          )
+        }
+      >
+        {carouselImages.map((image) => (
+          <div key={image.id} className="relative lg:h-screen h-full mt-6">
+            {/* Image */}
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="w-full h-full object-contain lg:object-cover"
+            />
 
-      {/* Indicators */}
-      <CarouselIndicators 
-        total={carouselImages.length}
-        current={currentIndex}
-        onSelect={setCurrentIndex}
-      />
+            {/* Overlay Text */}
+            {image.title || image.description ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="absolute bottom-8 left-4 right-4 text-white lg:bottom-12 lg:left-8 lg:right-8"
+              >
+                <h2 className="text-xl lg:text-3xl font-bold mb-2">
+                  {image.title}
+                </h2>
+                <p className="text-sm lg:text-lg text-gray-300">
+                  {image.description}
+                </p>
+              </motion.div>
+            ) : null}
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };

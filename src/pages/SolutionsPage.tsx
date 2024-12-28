@@ -5,6 +5,7 @@ import SolutionDialog from '../components/solutions/SolutionDialog';
 import { solutions } from '../data/solutions';
 import ReactConfetti from 'react-confetti';
 import VastuSection from './vastu/VastuSection';
+import ScrollToTop from '../components/ScrollToTop';
 
 const SolutionsPage = () => {
 
@@ -43,6 +44,7 @@ const SolutionsPage = () => {
       </div>
      
       </motion.div>
+      <ScrollToTop/>
 
       <AnimatePresence>
         {selectedSolution && (

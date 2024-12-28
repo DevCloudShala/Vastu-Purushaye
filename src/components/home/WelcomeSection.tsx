@@ -6,10 +6,8 @@ import HeadingBorder from '../headingBorder.tsx';
 
 const WelcomeSection = () => {
   return (
-    <div className="relative h-screen w-full flex items-center justify-center flex-col">
 
     <ImageCarousel />
-      </div>
   );
 };
 

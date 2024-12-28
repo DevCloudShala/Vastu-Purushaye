@@ -10,54 +10,31 @@ import CTASection from '../components/home/CTASection';
 import VastuSection from './vastu/VastuSection';
 
 import {WEB_IMAGE} from '../data/index.js'
+import VastuPurushayeSection from '../components/home/VastuPurushayeSection.js';
+import WhatIsVastu from '../components/home/WhatIsVastu.js';
+import BenefitsOfVastu from '../components/home/BenefitsOfVastu.js';
+import ScrollToTop from '../components/ScrollToTop.js';
 
 const HomePage = () => {
   return (
     <>
+      <ScrollToTop/>
+
     <WelcomeSection />
-      <ServicesSection />
+    <VastuPurushayeSection/>
+    {/* ✅ */}
+  <WhatIsVastu/>
+
+    <ServicesSection />
       {/* <Hero /> */}
       <div id='section2'>
-      <section className="bg-pink-100 px-4 py-8 flex flex-wrap items-center justify-center gap-6">
-      {/* Image Section */}
-      <div className="flex-1 min-w-[300px] max-w-[500px] flex justify-center">
-        <img
-          src={WEB_IMAGE.vastuMadal}
-          alt="Vastu Shastra Plan"
-          className="w-full rounded-lg shadow-lg"
-        />
-      </div>
-
-      {/* Text Section */}
-      <div className="flex-1 min-w-[300px] max-w-[500px]">
-        <h3 className="text-amber-600 font-semibold text-sm uppercase mb-2">
-          Vastu Shastra
-        </h3>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          What is Vastu Shastra?
-        </h1>
-        <p className="text-gray-700 text-xl md:text-2xl  leading-relaxed mb-4">
-          Vastu is an alignment of cosmic forces with five key elements (Water,
-          Fire, Earth, Space, and Wind) of nature.
-        </p>
-        <p className="text-gray-700 text-xl md:text-2xl  leading-relaxed mb-4">
-          Vastu is a Vedic system of architecture and design from ancient times
-          recorded in various Vastu texts. It consists of rules for designing
-          and constructing buildings in a systematic manner.
-        </p>
-        <p className="text-gray-700 text-xl md:text-2xl  leading-relaxed">
-          Vastu has a very basic concept, that every space has a soul of its
-          own and a flow of positive energy would exist around it if that soul
-          is harnessed in the right way.
-        </p>
-      </div>
-    </section>
+      <BenefitsOfVastu/>
       <Features />
-      </div>
-      <WhyChooseSection />
-      <VastuSection />
 
-      <CTASection />
+      </div>
+      {/* <WhyChooseSection /> */}
+      {/* <VastuSection /> */}
+
    <section className="bg-gray-50 py-12">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-8">WHAT WE NEED?</h2>
@@ -135,6 +112,7 @@ const HomePage = () => {
 </div>
 
     </section>
+    <CTASection />
    
     </>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrollToTop from '../components/ScrollToTop';
 
 const WhyChooseUs = () => {
   return (
     <div className="bg-gray-50 mt-11 font-serif min-h-screen py-12">
+      <ScrollToTop/>
       <div className="container mx-auto px-6">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}

@@ -41,7 +41,7 @@ const WhyChooseSection = () => {
       </motion.div>
 {
   reasons.map((reason, index) => (
-    <section className="bg-white px-4 py-8 flex flex-wrap items-center justify-center gap-6">
+    <section className=" px-4 py-8 flex flex-wrap items-center justify-center gap-6">
     {/* Image Section */}
    
 

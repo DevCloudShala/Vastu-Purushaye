@@ -98,9 +98,9 @@ const SolutionDialog: React.FC<SolutionDialogProps> = ({ solution, onClose }) =>
         </section>
 
         <div className="flex justify-end mt-6">
-          <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors">
+          <motion.a href='/contact' className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors">
             Book Now
-          </button>
+          </motion.a>
         </div>
       </motion.div>
     </motion.div>

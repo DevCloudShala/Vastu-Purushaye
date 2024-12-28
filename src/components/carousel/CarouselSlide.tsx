@@ -11,33 +11,37 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ image, isActive }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.1 }}
-      animate={{ 
+      animate={{
         opacity: isActive ? 1 : 0,
         scale: isActive ? 1 : 1.1,
-        zIndex: isActive ? 1 : 0
+        zIndex: isActive ? 1 : 0,
       }}
       transition={{ duration: 0.7 }}
-      className="absolute inset-0"
+      className="absolute inset-0 w-full h-full"
     >
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full overflow-hidden">
         <img
           src={image.url}
           alt={image.alt}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        
+
+        {/* Text Overlay */}
         <motion.div
-          initial={{ opacity: 1, y: 20 }}
-          animate={{ 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
             opacity: isActive ? 1 : 0,
-            y: isActive ? 0 : 20
+            y: isActive ? 0 : 20,
           }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="absolute bottom-16 left-8 right-8 text-white"
+          className="absolute bottom-8 left-4 right-4 text-white sm:bottom-12 sm:left-8 sm:right-8 lg:bottom-16 lg:left-16 lg:right-16"
         >
-          <h2 className="text-4xl font-serif font-bold mb-4">{image.title}</h2>
-          <p className="text-xl text-gray-200">{image.description}</p>
+          <h2 className="text-lg font-serif font-bold mb-2 sm:text-2xl lg:text-4xl sm:mb-4 lg:mb-6">
+            {image.title}
+          </h2>
+          <p className="text-sm text-gray-200 sm:text-base lg:text-lg">
+            {image.description}
+          </p>
         </motion.div>
       </div>
     </motion.div>

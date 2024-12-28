@@ -59,7 +59,7 @@ const Navbar = () => {
                 { href: '/', label: 'Home' },
                 { href: '/about', label: 'About' },
                 { href: '/solutions', label: 'Solutions' },
-                { href: '/blog', label: 'Blogs' },
+                // { href: '/blog', label: 'Blogs' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
                 <motion.a
