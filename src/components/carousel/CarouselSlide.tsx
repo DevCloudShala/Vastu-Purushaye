@@ -23,7 +23,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ image, isActive }) => {
         <img
           src={image.url}
           alt={image.alt}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center lg:object-contain"
         />
 
         {/* Text Overlay */}
